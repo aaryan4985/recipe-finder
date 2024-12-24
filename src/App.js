@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import RecipeList from "./RecipeList";
+import SearchBar from "./SearchBar";
+import Header from "./Header"; // Add this line to import the Header component
 
-function App() {
+const App = () => {
+  const [recipes, setRecipes] = useState([]);
+  const [query, setQuery] = useState("");
+
+  const fetchRecipes = async () => {
+    const API_URL = `https://api.edamam.com/search?q=${query}&app_id=YOUR_APP_ID&app_key=YOUR_APP_KEY`;
+    const response = await fetch(API_URL);
+    const data = await response.json();
+    setRecipes(data.hits);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <SearchBar fetchRecipes={fetchRecipes} setQuery={setQuery} />
+      <RecipeList recipes={recipes} />
     </div>
   );
-}
+};
 
 export default App;
