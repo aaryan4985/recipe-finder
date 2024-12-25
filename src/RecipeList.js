@@ -3,8 +3,8 @@ import RecipeCard from "./RecipeCard";
 const RecipeList = ({ recipes }) => {
   return (
     <div>
-      {recipes.map((recipe, index) => (
-        <RecipeCard key={index} recipe={recipe.recipe} />
+      {recipes.map((recipe) => (
+        <RecipeCard key={recipe.idMeal} recipe={recipe} />
       ))}
     </div>
   );

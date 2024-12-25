@@ -1,17 +1,14 @@
 const SearchBar = ({ fetchRecipes, setQuery }) => {
-  const handleSearch = (e) => {
-    e.preventDefault();
-    fetchRecipes();
-  };
-
   return (
-    <form onSubmit={handleSearch}>
+    <form>
       <input
         type="text"
-        placeholder="Search for recipes..."
+        placeholder="Search..."
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button type="submit">Search</button>
+      <button type="button" onClick={fetchRecipes}>
+        Search
+      </button>
     </form>
   );
 };
