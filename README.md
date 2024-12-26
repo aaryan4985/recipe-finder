@@ -1,70 +1,147 @@
-# Getting Started with Create React App
+# 🍳 Recipe Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, interactive web application that helps users discover and explore recipes from around the world. Built with React and powered by TheMealDB API, this application features a sleek glassmorphic design with dynamic animations and an intuitive user interface.
 
-## Available Scripts
+![Recipe Finder Preview](https://raw.githubusercontent.com/aaryan4985/recipe-finder/main/preview.png)
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- **Advanced Recipe Search**: Search through thousands of recipes instantly
+- **Category Filtering**: Browse recipes by food categories
+- **Regional Cuisine Filter**: Explore dishes from different regions of the world
+- **Responsive Design**: Seamless experience across all devices
+- **Modern UI/UX**:
+  - Glassmorphic design elements
+  - Smooth animations and transitions
+  - Dynamic background effects
+  - Interactive recipe cards
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Live Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Check out the live demo: [Recipe Finder App](https://recipe-finder-aaryan4985.vercel.app/)
 
-### `npm test`
+## 🛠️ Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React.js
+- React Router DOM
+- Framer Motion
+- Tailwind CSS
+- TheMealDB API
 
-### `npm run build`
+## ⚙️ Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/aaryan4985/recipe-finder.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Navigate to the project directory:
 
-### `npm run eject`
+```bash
+cd recipe-finder
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Install dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Install additional dependencies for animations and styling:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install framer-motion @tailwindcss/typography
+```
 
-## Learn More
+5. Start the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application will be available at `http://localhost:3000`
 
-### Code Splitting
+## 🎨 Environment Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Update your tailwind.config.js:
 
-### Analyzing the Bundle Size
+```javascript
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [require("@tailwindcss/typography")],
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Add the following animations to your CSS:
 
-### Making a Progressive Web App
+```css
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+.animate-blob {
+  animation: blob 7s infinite;
+}
 
-### Advanced Configuration
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+```
 
-### Deployment
+## 📱 Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. **Search Recipes**: Use the search bar to find recipes by name
+2. **Filter by Category**: Select from various food categories using the dropdown
+3. **Filter by Region**: Explore recipes from different cuisines using the region filter
+4. **View Recipe Details**: Click on any recipe card to see detailed instructions and ingredients
+5. **Responsive Design**: Access the application seamlessly on any device
 
-### `npm run build` fails to minify
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## 🙏 Acknowledgments
+
+- [TheMealDB](https://www.themealdb.com/) for providing the API
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [Framer Motion](https://www.framer.com/motion/) for animations
+- [React Router](https://reactrouter.com/) for routing
+
+## 📞 Contact
+
+Aaryan - [@aaryan4985](https://github.com/aaryan4985)
+
+Project Link: [https://github.com/aaryan4985/recipe-finder](https://github.com/aaryan4985/recipe-finder)
+
+---
+
+⭐️ If you found this project helpful, please give it a star on GitHub!
